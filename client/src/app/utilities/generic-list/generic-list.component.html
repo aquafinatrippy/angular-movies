@@ -1,0 +1,10 @@
+<p>movies-list works!</p>
+<div *ngIf="list; else loading">
+  <ng-content select="[content]"></ng-content>
+</div>
+<ng-template #loading>
+  <img
+    src="https://media.tenor.com/images/a742721ea2075bc3956a2ff62c9bfeef/tenor.gif"
+  />
+</ng-template>
+<div *ngIf="list?.length <= 0">there are no movies</div>
