@@ -2,7 +2,7 @@
   <ng-container content>
     <div class="movies-container">
       <div *ngFor="let item of items; let index = index" class="box">
-        <a><img [src]="item.poster" alt="Poster" /></a>
+        <img [src]="item.poster" alt="Poster" />
         <p>
           <a>{{ item.title }}</a>
         </p>
