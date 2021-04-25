@@ -12,6 +12,7 @@ import { EditTeatherComponent } from './movie-teathers/edit-teather/edit-teather
 import { IndexTheaterComponent } from './movie-teathers/index-theater/index-theater.component';
 import { CreateMovieComponent } from './movies/create-movie/create-movie.component';
 import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
+import { MovieFilterComponent } from './movies/movie-filter/movie-filter.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,11 @@ const routes: Routes = [
   {
     path: 'create/movie',
     component: CreateMovieComponent,
+  },
+
+  {
+    path: 'movies/filter',
+    component: MovieFilterComponent,
   },
   {
     path: 'movies/edit/:id',
