@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { firstLetterUpperCase } from 'src/app/validators/firstLetterUppercase';
+import { genreCreationDTO } from '../genres.model';
 
 @Component({
   selector: 'app-create-genre',
@@ -9,40 +7,11 @@ import { firstLetterUpperCase } from 'src/app/validators/firstLetterUppercase';
   styleUrls: ['./create-genre.component.scss'],
 })
 export class CreateGenreComponent implements OnInit {
-  constructor(private router: Router, private formBuilder: FormBuilder) {}
+  constructor() {}
 
-  form: FormGroup;
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      name: [
-        '',
-        {
-          validators: [
-            Validators.required,
-            Validators.minLength(3),
-            firstLetterUpperCase(),
-          ],
-        },
-      ],
-    });
-  }
-
-  saveChanges() {
-    this.router.navigate(['/genres']);
-  }
-
-  getErrorMsgFieldName() {
-    const field = this.form.get('name');
-    if (field.hasError('required')) {
-      return 'The name field is required';
-    }
-    if (field.hasError('minLength')) {
-      return 'Min length is 3';
-    }
-    if (field.hasError('firstLetterUpperCase')) {
-      return field.getError('firstLetterUpperCase').message;
-    }
-    return '';
+  saveChanges(genreCreationDTO: genreCreationDTO) {
+    console.log(genreCreationDTO);
   }
 }
