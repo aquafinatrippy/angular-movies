@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { actorCreationDTO } from '../actors.model';
 
 @Component({
   selector: 'app-create-actor',
   templateUrl: './create-actor.component.html',
-  styleUrls: ['./create-actor.component.scss']
+  styleUrls: ['./create-actor.component.scss'],
 })
 export class CreateActorComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  saveChanges(actorCreationDTO: actorCreationDTO) {
+    console.log(actorCreationDTO);
   }
-
 }
