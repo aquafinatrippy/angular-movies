@@ -20,7 +20,7 @@ import { IndexTheaterComponent } from './movie-teathers/index-theater/index-thea
 import { CreateTheaterComponent } from './movie-teathers/create-theater/create-theater.component';
 import { CreateMovieComponent } from './movies/create-movie/create-movie.component';
 import { EditActorComponent } from './actors/edit-actor/edit-actor.component';
-import { EditTeatherComponent } from './movie-teathers/edit-teather/edit-teather.component';
+import { EditTeatherComponent } from './movie-teathers/edit-theater/edit-teather.component';
 import { EditGenreComponent } from './genres/edit-genre/edit-genre.component';
 import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
 import { FormGenreComponent } from './genres/form-genre/form-genre.component';
@@ -29,6 +29,7 @@ import { FormActorComponent } from './actors/form-actor/form-actor.component';
 import { InputImgComponent } from './utilities/input-img/input-img.component';
 import { InputMarkdownComponent } from './utilities/input-markdown/input-markdown.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { MovieTheaterFormComponent } from './movie-teathers/movie-theater-form/movie-theater-form.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { MarkdownModule } from 'ngx-markdown';
     FormActorComponent,
     InputImgComponent,
     InputMarkdownComponent,
+    MovieTheaterFormComponent,
   ],
   imports: [
     BrowserModule,

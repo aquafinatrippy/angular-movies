@@ -8,7 +8,7 @@ import { CreateGenreComponent } from './genres/create-genre/create-genre.compone
 import { EditGenreComponent } from './genres/edit-genre/edit-genre.component';
 import { IndexGenresComponent } from './genres/index-genres/index-genres.component';
 import { CreateTheaterComponent } from './movie-teathers/create-theater/create-theater.component';
-import { EditTeatherComponent } from './movie-teathers/edit-teather/edit-teather.component';
+import { EditTeatherComponent } from './movie-teathers/edit-theater/edit-teather.component';
 import { IndexTheaterComponent } from './movie-teathers/index-theater/index-theater.component';
 import { CreateMovieComponent } from './movies/create-movie/create-movie.component';
 import { EditMovieComponent } from './movies/edit-movie/edit-movie.component';
@@ -68,7 +68,7 @@ const routes: Routes = [
     component: CreateTheaterComponent,
   },
   {
-    path: 'teather/edit/:id',
+    path: 'theater/edit/:id',
     component: EditTeatherComponent,
   },
 
