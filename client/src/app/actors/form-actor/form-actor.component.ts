@@ -28,10 +28,15 @@ export class FormActorComponent implements OnInit {
         },
       ],
       dateOfBirth: '',
+      picture: '',
     });
     if (this.model !== undefined) {
       this.form.patchValue(this.model);
     }
+  }
+
+  onImageSelected(image) {
+    this.form.get('picture').setValue(image);
   }
 
   saveChanges() {
