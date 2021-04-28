@@ -15,6 +15,7 @@ export class EditActorComponent implements OnInit {
     dateOfBirth: new Date(),
     picture:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Roman_S.svg/1200px-Roman_S.svg.png',
+    biography: 'default vaule',
   };
 
   ngOnInit(): void {
