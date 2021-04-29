@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { movieTheatersCreationDTO } from '../movie-theaters.model';
+import { movieTheatersDTO } from '../movie-theaters.model';
 
 @Component({
   selector: 'app-edit-teather',
@@ -10,13 +10,19 @@ import { movieTheatersCreationDTO } from '../movie-theaters.model';
 export class EditTeatherComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {}
 
-  model: movieTheatersCreationDTO = { name: 'test' };
+  model: movieTheatersDTO = {
+    name: 'test',
+    latitude: 59.4074914700568,
+    longitude: 24.734078943729404,
+  };
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {});
+
+    console.log(this.model);
   }
 
-  saveChanges(movieTheater: movieTheatersCreationDTO) {
+  saveChanges(movieTheater: movieTheatersDTO) {
     console.log(movieTheater);
   }
 }
