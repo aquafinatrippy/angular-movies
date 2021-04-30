@@ -20,7 +20,7 @@ const routes: Routes = [
     component: DashboardComponent,
   },
   {
-    path: 'create/movie',
+    path: 'movies/create',
     component: CreateMovieComponent,
   },
 
