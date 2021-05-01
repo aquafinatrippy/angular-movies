@@ -1,0 +1,51 @@
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+
+@Component({
+  selector: 'app-actors-autocomplete',
+  templateUrl: './actors-autocomplete.component.html',
+  styleUrls: ['./actors-autocomplete.component.scss'],
+})
+export class ActorsAutocompleteComponent implements OnInit {
+  constructor() {}
+
+  control: FormControl = new FormControl();
+
+  actors = [
+    {
+      name: 'tom',
+      picture:
+        'https://yt3.ggpht.com/ytc/AAUvwni51a2VLg1X3uY7y-kR1lX5BkqGsl1d8zYKP0-M1A=s900-c-k-c0x00ffffff-no-rj',
+    },
+    {
+      name: 'dex',
+      picture:
+        'https://yt3.ggpht.com/ytc/AAUvwni51a2VLg1X3uY7y-kR1lX5BkqGsl1d8zYKP0-M1A=s900-c-k-c0x00ffffff-no-rj',
+    },
+    {
+      name: 'fexs',
+      picture:
+        'https://yt3.ggpht.com/ytc/AAUvwni51a2VLg1X3uY7y-kR1lX5BkqGsl1d8zYKP0-M1A=s900-c-k-c0x00ffffff-no-rj',
+    },
+  ];
+
+  selectedActors = [];
+
+  originalActors = this.actors;
+
+  ngOnInit(): void {
+    this.control.valueChanges.subscribe((value) => {
+      this.actors = this.originalActors;
+      this.actors = this.actors.filter(
+        (actor) => actor.name.indexOf(value) !== -1
+      );
+    });
+  }
+
+  optionSelected(event: MatAutocompleteSelectedEvent) {
+    console.log(event.option.value);
+    this.selectedActors.push(event.option.value);
+    this.control.patchValue('');
+  }
+}
