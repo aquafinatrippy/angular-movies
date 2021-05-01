@@ -5,6 +5,7 @@ export interface movieCreationDTO {
   trailer: string;
   releaseDate: Date;
   poster: File;
+  genresIds: number[];
 }
 
 export interface movieDTO {
