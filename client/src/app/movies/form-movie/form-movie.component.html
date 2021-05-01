@@ -38,6 +38,13 @@
     [NonSelectedItems]="nonSelectedGenres"
   ></app-multiple-selector>
 
+  <h4>Select movie theaters</h4>
+
+  <app-multiple-selector
+    [SelectedItems]="selectedTheaters"
+    [NonSelectedItems]="NonSelectedTheaters"
+  ></app-multiple-selector>
+
   <div>
     <button mat-flat-button [disabled]="form.invalid">Save</button>
     <a mat-stroked-button routerLink="/">Cancel</a>

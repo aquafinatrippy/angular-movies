@@ -6,6 +6,7 @@ export interface movieCreationDTO {
   releaseDate: Date;
   poster: File;
   genresIds: number[];
+  movieTheatersIds: number[]
 }
 
 export interface movieDTO {
