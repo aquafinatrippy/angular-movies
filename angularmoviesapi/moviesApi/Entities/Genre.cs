@@ -15,11 +15,5 @@ namespace moviesApi.Entities
         [FirstLetterToUppercase]
         public string name { get; set; }
 
-        [Range(18, 120)]
-        public int Age { get; set; }
-        [CreditCard]
-        public string CreditCard { get; set; }
-        [Url]
-        public string Url { get; set; }
     }
 }
