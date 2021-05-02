@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using moviesApi.Services;
 
 namespace moviesApi
 {
@@ -28,6 +29,7 @@ namespace moviesApi
         {
 
             services.AddControllers();
+            services.AddSingleton<IRepository, inMemoryRepository>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "moviesApi", Version = "v1" });

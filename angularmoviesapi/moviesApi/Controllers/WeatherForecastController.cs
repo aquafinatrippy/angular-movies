@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using moviesApi.Services;
+
 
 namespace moviesApi.Controllers
 {
@@ -17,15 +19,19 @@ namespace moviesApi.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IRepository repository;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IRepository repository)
         {
             _logger = logger;
+            this.repository = repository;
         }
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            repository.GetAllGenres();
+
             var rng = new Random();
             return Enumerable.Range(1, 15).Select(index => new WeatherForecast
             {
