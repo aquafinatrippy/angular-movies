@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using moviesApi.Services;
 using moviesApi.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace moviesApi.Controllers
 {
@@ -19,15 +20,19 @@ namespace moviesApi.Controllers
 
         [HttpGet]
         [HttpGet("list")]
-        [HttpGet("/allgenres")]
-        public ActionResult<Genre> Get()
+        public async Task<ActionResult<List<Genre>>> Get()
         {
-            return repository.GetAllGenres();
+            return await repository.GetAllGenres();
         }
 
-        [HttpGet("{id:int}/{param2=felipe}")]
-        public ActionResult<Genre> Get(int id, string param2)
+        [HttpGet("{id:int}")]
+        public ActionResult<Genre> Get([BindRequired] int id)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var genre = repository.GetGenreById(id);
 
             if(genre == null)
