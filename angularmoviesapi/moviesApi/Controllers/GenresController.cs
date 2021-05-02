@@ -18,19 +18,21 @@ namespace moviesApi.Controllers
         }
 
         [HttpGet]
+        [HttpGet("list")]
+        [HttpGet("/allgenres")]
         public List<Genre> Get()
         {
             return repository.GetAllGenres();
         }
 
-        [HttpGet]
-        public Genre Get(int id)
+        [HttpGet("{id}/{param2=felipe}")]
+        public Genre Get(int id, string param2)
         {
             var genre = repository.GetGenreById(id);
 
             if(genre == null)
             {
-                return NotFound();
+                //return NotFound();
             }
 
             return genre;
