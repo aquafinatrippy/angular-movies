@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 namespace moviesApi.Controllers
 {
     [Route("api/genres")]
+    [ApiController]
     public class GenresController: ControllerBase
     {
         private readonly IRepository repository;
@@ -28,10 +29,7 @@ namespace moviesApi.Controllers
         [HttpGet("{id:int}")]
         public ActionResult<Genre> Get([BindRequired] int id)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+           
 
             var genre = repository.GetGenreById(id);
 
@@ -44,14 +42,16 @@ namespace moviesApi.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post()
+        public ActionResult Post([FromBody] Genre genre)
         {
+         
             return NoContent();
         }
 
         [HttpPut]
-        public ActionResult Put()
+        public ActionResult Put([FromBody] Genre genre)
         {
+            
             return NoContent();
         }
 
