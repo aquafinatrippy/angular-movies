@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { genreDTO } from './genres.model';
 
@@ -5,9 +6,10 @@ import { genreDTO } from './genres.model';
   providedIn: 'root',
 })
 export class GenresService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getAll(): genreDTO[] {
     return [{ id: 1, name: 'test' }];
+    // return this.http.get<genreDTO[]>("")
   }
 }

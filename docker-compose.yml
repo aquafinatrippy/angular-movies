@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  moviehub-frontend:
+    container_name: moviehub-frontend
+    build: ./client
+    ports:
+      - "9000:80"
+  net-backend:
+    container_name: net-backend
+    build: ./backend
+    ports:
+      - "443:80"
