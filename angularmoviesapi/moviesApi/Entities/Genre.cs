@@ -9,11 +9,11 @@ namespace moviesApi.Entities
 {
     public class Genre
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         [Required(ErrorMessage = "The field with name {0} is required")]
-        [StringLength(10)]
+        [StringLength(50)]
         [FirstLetterToUppercase]
-        public string name { get; set; }
+        public string Name { get; set; }
 
     }
 }
