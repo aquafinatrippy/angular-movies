@@ -1,2 +1,5 @@
-/node_modules
-dist
+**/node_modules
+**/.env
+**/.git
+**/.gitignore
+**/node_modules
